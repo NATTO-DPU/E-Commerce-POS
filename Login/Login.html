@@ -60,7 +60,7 @@
 <body>
     <div class="container">
         <h2>Login</h2>
-        <form action="/login" method="post">
+        <form id="loginForm">
             <label for="username">Username</label>
             <input type="text" id="username" name="username" required>
             <label for="password">Password</label>
@@ -71,5 +71,23 @@
             <p>Don't have an account? <a href="signup.html">Sign up here</a></p>
         </div>
     </div>
+    <script>
+        document.getElementById('loginForm').addEventListener('submit', function(event) {
+            event.preventDefault(); // Prevent form from submitting the traditional way
+
+            // Get values from the form
+            const username = document.getElementById('username').value;
+            const password = document.getElementById('password').value;
+
+            // Check if the username and password are correct
+            if (username === 'Admin' && password === '1234') {
+                // Redirect to another page if login is successful
+                window.location.href = 'welcome.html'; // Replace with the actual target page
+            } else {
+                alert('Invalid username or password');
+            }
+        });
+    </script>
 </body>
 </html>
+
