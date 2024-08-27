@@ -1,11 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
 <head>
-    <link rel="stylesheet" href="login.css">
-  </head>
-<div class="login">
-	<h1>Login</h1>
-    <form method="post">
-    	<input type="text" name="u" placeholder="Username" required="required" />
-        <input type="password" name="p" placeholder="Password" required="required" />
-        <button type="submit" class="btn btn-primary btn-block btn-large">Let me in.</button>
-    </form>
-</div>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Page</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        .container {
+            background-color: #fff;
+            padding: 2em;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+            width: 300px;
+        }
+        h2 {
+            margin-bottom: 1em;
+        }
+        label {
+            display: block;
+            margin-bottom: 0.5em;
+        }
+        input[type="text"], input[type="password"] {
+            width: 100%;
+            padding: 0.5em;
+            margin-bottom: 1em;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+        input[type="submit"] {
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            padding: 0.7em;
+            border-radius: 4px;
+            cursor: pointer;
+            width: 100%;
+        }
+        input[type="submit"]:hover {
+            background-color: #0056b3;
+        }
+        .link {
+            text-align: center;
+            margin-top: 1em;
+        }
+        .link a {
+            color: #007bff;
+            text-decoration: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Login</h2>
+        <form action="/login" method="post">
+            <label for="username">Username</label>
+            <input type="text" id="username" name="username" required>
+            <label for="password">Password</label>
+            <input type="password" id="password" name="password" required>
+            <input type="submit" value="Login">
+        </form>
+        <div class="link">
+            <p>Don't have an account? <a href="signup.html">Sign up here</a></p>
+        </div>
+    </div>
+</body>
+</html>
